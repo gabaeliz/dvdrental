@@ -1,6 +1,11 @@
 from rest_framework import serializers
 
-from .models import Actor, Film, Rental, Payment, Inventory
+from .models import (
+    Actor, 
+    Film, 
+    Rental, 
+    Payment, 
+    Inventory)
 
 class ActorSerializer(serializers.ModelSerializer):
     class Meta:
