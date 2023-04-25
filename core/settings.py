@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'rest_framework',
     'movies',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -78,14 +80,24 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': config('POSTGRESQL_NAME'),
+#         'USER': config('POSTGRESQL_USER'),
+#         'PASSWORD': config('POSTGRESQL_PASS'),
+#         'HOST': config('POSTGRESQL_HOST'),
+#         'PORT': config('POSTGRESQL_PORT'),
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('POSTGRESQL_NAME'),
-        'USER': config('POSTGRESQL_USER'),
-        'PASSWORD': config('POSTGRESQL_PASS'),
-        'HOST': config('POSTGRESQL_HOST'),
-        'PORT': config('POSTGRESQL_PORT'),
+        'NAME': 'dvdrental', 
+        'USER': 'postgres',
+        'PASSWORD': "Nina2608",
+        'HOST': "localhost",
+        'PORT': 5432
     }
 }
 
@@ -137,3 +149,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20
+}
