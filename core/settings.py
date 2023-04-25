@@ -80,26 +80,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': config('POSTGRESQL_NAME'),
-#         'USER': config('POSTGRESQL_USER'),
-#         'PASSWORD': config('POSTGRESQL_PASS'),
-#         'HOST': config('POSTGRESQL_HOST'),
-#         'PORT': config('POSTGRESQL_PORT'),
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dvdrental', 
-        'USER': 'postgres',
-        'PASSWORD': "Nina2608",
-        'HOST': "localhost",
-        'PORT': 5432
+        'NAME': config('POSTGRESQL_NAME'),
+        'USER': config('POSTGRESQL_USER'),
+        'PASSWORD': config('POSTGRESQL_PASS'),
+        'HOST': config('POSTGRESQL_HOST'),
+        'PORT': config('POSTGRESQL_PORT'),
     }
 }
+
 
 # DATABASES = {
 #     'default': {
